@@ -1,0 +1,442 @@
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 32px; /* Ajusta o tamanho do título para telas pequenas */
+    }
+
+    .banner p {
+        font-size: 16px; /* Ajusta o tamanho do texto */
+    }
+}
+
+/* Cores principais */
+:root {
+    --primary-color: #FFA500; /* Laranja */
+    --secondary-color: #000000; /* Preto */
+    --text-color: #ffffff; /* Branco */
+    --highlight-color: #ffffff; /* Branco para destaques */
+}
+
+/* Reset de estilos */
+body, h1, h2, h3, p, ul, li, figure, blockquote, dd {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--text-color); /* Texto em branco */
+}
+
+/* Navbar */
+/* Importando a fonte Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Estilos gerais para a navbar */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7); /* Navbar com 70% de transparência */
+    padding: 15px 30px; /* Padding para a navbar */
+    position: fixed; /* Fixar a navbar no topo */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil para dar destaque */
+}
+
+/* Container que centraliza o conteúdo da navbar */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo */
+.navbar-logo img {
+    height: 80px; /* Tamanho da logo */
+}
+
+/* Links da navbar */
+.navbar-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    margin-left: 30px;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #f39c12; /* Cor laranja */
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    letter-spacing: 1px; /* Espaçamento entre as letras */
+}
+
+/* Efeito de hover nos links */
+.navbar-links a:hover {
+    color: #e67e22; /* Cor mais clara de laranja */
+}
+
+/* Hamburger (menu móvel) */
+.navbar-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.navbar-hamburger span {
+    background-color: #f39c12;
+    height: 4px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9); /* Cor de fundo escura com transparência */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar-links li {
+        margin: 10px 0;
+    }
+
+    .navbar-links a {
+        font-size: 16px;
+    }
+
+    .navbar-hamburger {
+        display: flex;
+    }
+
+    .navbar.active .navbar-links {
+        display: flex;
+    }
+}
+
+/* Banner */
+#home {
+    position: relative;
+    height: 100vh; /* O banner ocupa 100% da altura da tela */
+    overflow: hidden; /* Garante que nada saia da área do banner */
+}
+
+/* Imagem de fundo */
+.banner-img {
+    width: 100%;
+    height: 100%; /* A imagem vai ocupar 100% da altura e largura */
+    object-fit: cover; /* Garante que a imagem cubra completamente o espaço, sem distorções */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; /* Coloca a imagem atrás do conteúdo */
+}
+
+/* Filtro semitransparente */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Filtro semitransparente para melhorar a legibilidade do texto */
+    z-index: 1; /* Coloca a sobreposição acima da imagem, mas abaixo do conteúdo */
+}
+
+/* Texto do Banner */
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+/* Título */
+.banner-text h1 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Descrição do Banner */
+.banner-text p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Botão de Chamada para Ação */
+.btn-cta {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #f39c12; /* Cor laranja */
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cta:hover {
+    background-color: #e67e22; /* Cor mais clara de laranja ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .banner-text h1 {
+        font-size: 36px;
+    }
+    
+    .banner-text p {
+        font-size: 18px;
+    }
+}
+
+
+/* Título das Seções */
+.section-title {
+    color: var(--primary-color);
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* Sobre Nós */
+#about-us img {
+    border-radius: 8px;
+    width: 100%;
+    height: 300px; /* Altura fixa para uniformidade */
+    object-fit: cover; /* Garante que a imagem cubra completamente o espaço */
+    margin-bottom: 30px;
+}
+
+#about-us h4 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+#about-us p {
+    color: var(--highlight-color);
+}
+
+/* Fotos da equipe */
+#team img {
+    width: 180px; /* Definição do tamanho das fotos */
+    height: 180px; /* Tamanho fixo para garantir que as fotos fiquem iguais */
+    object-fit: cover; /* Ajusta a imagem para cobrir a área sem distorcer */
+    border-radius: 50%; /* Torna a imagem redonda */
+    border: 5px solid var(--primary-color); /* Bordas arredondadas com a cor laranja */
+    margin-bottom: 20px;
+}
+
+#team h4 {
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+
+#team p {
+    color: var(--highlight-color);
+}
+
+
+/* Cardápio */
+#menu {
+    padding: 60px 0;
+}
+
+#menu .section-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #f39c12; /* Cor laranja */
+}
+
+#menu .card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#menu .card-img-top {
+    height: 200px; /* Altura fixa para as imagens */
+    object-fit: cover; /* Garante que a imagem cubra a área do card */
+    border-bottom: 2px solid #f39c12; /* Borda laranja para separar a imagem do texto */
+}
+
+#menu .card-body {
+    padding: 20px;
+    background-color: #fff;
+}
+
+#menu .card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#menu .card-text {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Ajustes para responsividade */
+@media (max-width: 768px) {
+    #menu .section-title {
+        font-size: 28px;
+    }
+
+    #menu .card-title {
+        font-size: 18px;
+    }
+
+    #menu .card-text {
+        font-size: 14px;
+    }
+}
+
+
+/* Botões */
+.btn-warning {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 12px 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-warning:hover {
+    background-color: #cc8400;
+}
+
+/* Estilos gerais da seção de contato */
+#contact {
+    padding: 60px 0;
+    background-color: var(--secondary-color); /* Fundo escuro para destacar o conteúdo */
+    color: white;
+}
+
+/* Título da seção */
+.section-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #f39c12; /* Laranja */
+    text-transform: uppercase;
+}
+
+/* Texto abaixo do título */
+#contact p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: white; /* Texto branco */
+}
+
+/* Informações de contato */
+#contact .col-md-6 h4 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f39c12; /* Laranja para os títulos "Nosso Endereço" e "Nosso Local" */
+    margin-bottom: 15px;
+}
+
+/* Texto geral (branco) */
+#contact .col-md-6 p {
+    color: white; /* Deixa o texto em branco */
+}
+
+/* Botão do WhatsApp */
+#contact .btn-warning {
+    background-color: #f39c12;
+    border-color: #f39c12;
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: 500;
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+#contact .btn-warning:hover {
+    background-color: #e67e22;
+    border-color: #e67e22;
+}
+
+/* Mapa */
+#contact .map-container {
+    margin-top: 30px;
+}
+
+#contact iframe {
+    border-radius: 12px; /* Bordas arredondadas para o mapa */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #contact .container {
+        padding: 0 15px;
+    }
+
+    #contact .col-md-6 {
+        margin-bottom: 30px; /* Espaço entre as colunas em telas menores */
+    }
+}
+
+
+/* Rodapé */
+.footer {
+    background-color: var(--secondary-color);
+    color: var(--highlight-color);
+    padding: 20px 0;
+}
+
+.footer p {
+    font-size: 14px;
+}
+
+/* Links e textos destacados */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
